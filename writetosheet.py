@@ -18,7 +18,7 @@ credentials = ServiceAccountCredentials.from_json_keyfile_name(
 httpAuth = credentials.authorize(httplib2.Http())
 service = apiclient.discovery.build('sheets', 'v4', http = httpAuth)
 
-with open('charvalues.txt', 'r', encoding="utf-8") as file:
+with open('charvalues3.txt', 'r', encoding="utf-8") as file:
     char_values = [line.strip() for line in file]
 
 # Prepare data for updating the table
@@ -26,7 +26,7 @@ update_data = {
     "valueInputOption": "USER_ENTERED",
     "data": [
         {
-            "range": "A3:A" + str(len(char_values) + 2),
+            "range": "Печи, буржуйки, булерьяны!E3:E" + str(len(char_values) + 2),
             "majorDimension": "COLUMNS",
             "values": [char_values]
         }

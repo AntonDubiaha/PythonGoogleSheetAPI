@@ -19,7 +19,7 @@ service = apiclient.discovery.build('sheets', 'v4', http = httpAuth)
 
 id_products = service.spreadsheets().values().get(
     spreadsheetId=spreadsheet_id,
-    range='A3:A259',
+    range='Печи, буржуйки, булерьяны!A3:A228',
     majorDimension='COLUMNS'
 ).execute()
 

@@ -13,10 +13,10 @@ service = Service(executable_path=ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
 
 file_name = "id_products.txt"
-output_file_name = "charvalues.txt"
+output_file_name = "charvalues2.txt"
 
 # Text for xpath
-xpath_text = "Країна виробник"
+xpath_text = "Тип обігріву"
 
 with open(output_file_name, "w", encoding="utf-8") as charvalue_file:
     with open(file_name, "r") as file:
@@ -60,4 +60,4 @@ with open(output_file_name, "w", encoding="utf-8") as charvalue_file:
             # Write the value to the file
             charvalue_file.write(f"{value}\n")
 
-update_spreadsheet("charvalues.txt", "J", 3, "Печи, буржуйки, булерьяны")
+update_spreadsheet("charvalues2.txt", "J", 3, "Печи, буржуйки, булерьяны")
